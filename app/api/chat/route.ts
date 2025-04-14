@@ -6,7 +6,7 @@ export const maxDuration = 30;
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-
+  console.log(messages);
   const systemPrompt = `
   You are an expert career and interview coach.
   

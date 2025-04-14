@@ -6,8 +6,8 @@ export default function Chat() {
 
   return (
     <div className="mx-auto flex w-full max-w-md flex-col self-stretch py-24">
-      {messages.map((m: object) => (
-        <div key={m.id} className="whitespace-pre-wrap">
+      {messages.map((m: object, index) => (
+        <div key={index} className="whitespace-pre-wrap">
           {m.role == "user" ? "User: " : "Ai: "}
           {m.content}
         </div>
