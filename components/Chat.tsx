@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useChat } from "@ai-sdk/react";
+import { Input } from "./ui/input";
 type Message = {
   role: "user" | "assistant" | "system" | "data";
   content: string;
@@ -19,7 +20,7 @@ export default function Chat() {
       ))}
 
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           className="fixed bottom-0 mb-8 w-full max-w-md rounded border border-gray-300 p-2 shadow-xl"
           placeholder="Say something"
           value={input}
