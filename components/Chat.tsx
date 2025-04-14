@@ -15,7 +15,7 @@ export default function Chat() {
 
   return (
     <div className="flex h-screen flex-col justify-between">
-      <div className="mx-auto mt-10 w-full max-w-4xl space-y-4 overflow-y-auto px-5">
+      <div className="mx-auto w-full space-y-4 overflow-y-auto px-5 pt-14 pb-36">
         {messages.map((m: Message, index) => (
           <div
             key={index}
@@ -28,7 +28,7 @@ export default function Chat() {
             )}
 
             <div
-              className={`max-w-sm rounded-lg px-4 py-2 text-white ${
+              className={`max-w-9/12 rounded-lg px-4 py-2 text-white ${
                 m.role === "user"
                   ? "rounded-br-none bg-blue-600"
                   : "rounded-bl-none bg-gray-700"
@@ -43,10 +43,12 @@ export default function Chat() {
           </div>
         ))}
       </div>
-
-      <form onSubmit={handleSubmit} className="flex w-full justify-center py-6">
+      <form
+        onSubmit={handleSubmit}
+        className="absolute bottom-0 left-1/2 flex w-full max-w-2xl -translate-x-1/2 justify-center rounded-2xl rounded-b-none bg-slate-800 py-6"
+      >
         <Input
-          className="w-11/12 max-w-xl rounded-lg focus:text-white focus:ring-2 focus:ring-white"
+          className="max-w-xl rounded-lg bg-black focus:text-white focus:ring-2 focus:ring-white"
           placeholder="Say something..."
           value={input}
           onChange={handleInputChange}
