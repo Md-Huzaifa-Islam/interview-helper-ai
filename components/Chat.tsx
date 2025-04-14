@@ -14,7 +14,7 @@ export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
-    <div className="flex h-screen flex-col justify-between">
+    <div className="flex h-screen flex-col justify-between bg-black text-white">
       <div className="mx-auto w-full space-y-4 overflow-y-auto px-5 pt-14 pb-36">
         {messages.map((m: Message, index) => (
           <div
@@ -43,13 +43,14 @@ export default function Chat() {
           </div>
         ))}
       </div>
+
       <form
         onSubmit={handleSubmit}
-        className="absolute bottom-0 left-1/2 flex w-full max-w-2xl -translate-x-1/2 justify-center rounded-2xl rounded-b-none bg-slate-800 py-6"
+        className="absolute bottom-0 left-1/2 flex w-11/12 max-w-2xl -translate-x-1/2 justify-center rounded-2xl rounded-b-none bg-slate-800 px-5 py-6 shadow-lg"
       >
         <Input
-          className="max-w-xl rounded-lg bg-black focus:text-white focus:ring-2 focus:ring-white"
-          placeholder="Say something..."
+          className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white shadow-inner backdrop-blur-md transition-all duration-300 placeholder:text-white/60 focus:border-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          placeholder="Ask me anything..."
           value={input}
           onChange={handleInputChange}
         />
