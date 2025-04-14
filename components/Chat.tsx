@@ -3,6 +3,7 @@ import { useChat } from "@ai-sdk/react";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { RiRobot2Fill } from "react-icons/ri";
 import { Input } from "./ui/input";
+import Markdown from "react-markdown";
 
 type Message = {
   role: "user" | "assistant" | "system" | "data";
@@ -31,10 +32,10 @@ export default function Chat() {
               className={`max-w-9/12 rounded-lg px-4 py-2 text-white ${
                 m.role === "user"
                   ? "rounded-br-none bg-blue-600"
-                  : "rounded-bl-none bg-gray-700"
-              }`}
+                  : "rounded-bl-none bg-slate-600"
+              } prose lg:prose-xl`}
             >
-              {m.content}
+              {<Markdown>{m.content}</Markdown>}
             </div>
 
             {m.role === "user" && (
